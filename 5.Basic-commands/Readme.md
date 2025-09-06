@@ -156,3 +156,141 @@ ls -R
 | `ls -F`   | Classify with symbols        |
 
 
+## 6. how to count number of lines in a file in linux
+wc -l file
+
+## 7. How to compare and display different between two files in Linux
+diff -u fileA fileB 
+
+## 8. The find command in Linux is a powerful tool to search for files and directories based on different criteria such as name, type, size, modification time, permissions, and more.
+
+## Basic Syntax
+
+find [path] [options] [expression]
+
+path → directory to search (use . for current directory)
+
+options/expression → criteria to match
+
+## Examples
+### a.Find a File by Name
+find . -name "file.txt"
+👉 Searches for file.txt in the current directory and all subdirectories.
+
+Case-insensitive search:
+find . -iname "file.txt"
+
+### b.Find Directories by Name
+find /home/krishna -type d -name "Documents"
+
+-type d → directories
+-type f → files
+
+### c. Find Files by Extension
+find . -type f -name "*.txt"
+👉 Finds all .txt files in the current directory recursively.
+
+### d. Find Files by Size
+
+find . -size +1M
+
++1M → files larger than 1 MB
+
+-1M → files smaller than 1 MB
+
+1M → files exactly 1 MB
+
+## 9. commands to check free RAM and memory usage
+
+## a. free Command
+Displays memory usage in a simple table.
+free -h
+-h → human-readable (shows MB/GB instead of bytes)
+
+### Example Output:
+              total        used        free      shared  buff/cache   available
+Mem:           7.8G        3.2G        1.0G        200M        3.6G        4.1G
+Swap:          2.0G        0.0G        2.0G
+
+free → truly free memory
+
+available → memory available for new processes
+
+### b. top Command
+
+Shows a real-time view of system processes and memory usage.
+
+top
+
+Look at KiB Mem or MiB Mem section to see RAM usage.
+Press q to exit.
+
+### c. htop Command (interactive, needs installation)
+
+htop
+
+Colored, interactive version of top.
+
+Shows RAM, swap, CPU usage, and running processes.
+
+Install if missing:
+sudo apt install htop     # Debian/Ubuntu
+sudo yum install htop     # RHEL/CentOS
+
+## 10. commands to check disk utilization
+
+## a. df – Disk Free
+
+Shows disk space usage of filesystems.
+
+df -h
+
+-h → human-readable (GB/MB instead of bytes)
+### Example Output:
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sda1        50G   20G   28G  42% /
+tmpfs           7.8G     0  7.8G   0% /dev/shm
+
+Size → total size of filesystem
+Used → space used
+Avail → space available
+Use% → percentage used
+Mounted on → mount point
+
+## b. du – Disk Usage
+Shows disk usage of files/directories.
+
+Check size of current directory:
+
+du -sh .
+
+
+-s → summary (total size)
+
+-h → human-readable
+
+Check all subdirectories:
+
+## c. ls – Show File Sizes
+
+ls -lh
+
+-l → long listing
+-h → human-readable
+Useful to see individual file sizes in a directory.
+
+## d. df with Specific Filesystem
+
+df -h /home
+
+Checks usage of a specific partition or directory.
+
+
+
+
+
+
+
+
+
+
