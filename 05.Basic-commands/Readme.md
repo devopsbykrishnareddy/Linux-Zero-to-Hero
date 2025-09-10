@@ -286,10 +286,68 @@ df -h /home
 Checks usage of a specific partition or directory.
 
 
+## 11. 🔹 1. more
+
+Displays file content one screen at a time.
+
+You can scroll forward only.
+
+Key shortcuts:
+
+Space → next page
+
+Enter → next line
+
+q → quit
+
+## Example:
+more /etc/passwd
+
+## 🔹 2. less
+
+Similar to more, but more powerful.
+
+You can scroll forward & backward.
+
+Supports searching inside the file (/keyword).
+
+Faster and recommended for large files.
+
+### Example:
+less /var/log/syslog
 
 
+## 🔹 3. head
 
+Shows the first 10 lines of a file (by default).
 
+You can specify the number of lines with -n.
+
+### Examples
+
+head file.txt          # first 10 lines
+head -n 20 file.txt    # first 20 lines
+
+## 🔹 4. tail
+
+Shows the last 10 lines of a file (by default).
+
+Useful for checking logs.
+
+Option -f → follow the file in real time (like live logs).
+
+### Examples:
+
+tail file.txt          # last 10 lines
+tail -n 15 file.txt    # last 15 lines
+tail -f /var/log/syslog   # live monitoring logs
+
+| Command | Purpose       | Forward | Backward | Live Logs  |
+| ------- | ------------- | ------- | -------- | ---------- |
+| `more`  | View file     | Yes     | No       | No         |
+| `less`  | View file     | Yes     | Yes      | No         |
+| `head`  | First N lines | N/A     | N/A      | No         |
+| `tail`  | Last N lines  | N/A     | N/A      | Yes (`-f`) |
 
 
 
